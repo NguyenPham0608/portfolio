@@ -7,3 +7,63 @@ body {
     margin: 0;
     padding: 0;
 }
+
+.fancy-list {
+    background: linear-gradient(135deg, #b8e6ff 0%, #e0f7ff 100%);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    margin: 20px auto;
+    font-family: 'Arial', sans-serif;
+    list-style: none;
+}
+
+.fancy-list li {
+    margin: 10px 0;
+    transform: translateX(0);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fancy-list li:hover {
+    transform: translateX(10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.fancy-list li a {
+    display: block;
+    padding: 12px 15px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    text-decoration: none;
+    color: #1a73e8;
+    font-weight: 500;
+    font-size: 16px;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.fancy-list li a:hover {
+    background: #1a73e8;
+    color: white;
+    transform: scale(1.02);
+    box-shadow: -7px 5px 8px rgba(0, 0, 0, 0.46);
+}
+
+.fancy-list li a::before {
+    content: '→';
+    margin-right: 8px;
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+@media (max-width: 600px) {
+    .fancy-list {
+        padding: 15px;
+        max-width: 90%;
+    }
+
+    .fancy-list li a {
+        font-size: 14px;
+        padding: 10px 12px;
+    }
+}
