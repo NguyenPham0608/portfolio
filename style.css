@@ -46,7 +46,6 @@ body {
     background: #1a73e8;
     color: white;
     transform: scale(1.02);
-    box-shadow: -7px 5px 8px rgba(0, 0, 0, 0.46);
 }
 
 .fancy-list li a::before {
@@ -54,6 +53,59 @@ body {
     margin-right: 8px;
     font-size: 14px;
     opacity: 0.7;
+}
+
+.fancy-header {
+    text-align: center;
+    font-size: 48px;
+    background: linear-gradient(135deg, #00d0ff 0%, #66e0ff 100%);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    font-family: 'Arial', sans-serif;
+    color: #0c3d63;
+    margin: 20px auto;
+    max-width: 600px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fancy-header:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+.fancy-header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.fancy-header:hover::after {
+    left: 100%;
+}
+
+.fancy-subheader {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 10px auto;
+    max-width: 600px;
+    padding: 10px;
+    font-weight: 400;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.fancy-subheader:hover {
+    color: #1a73e8;
+    transform: scale(1.02);
 }
 
 @media (max-width: 600px) {
@@ -65,5 +117,17 @@ body {
     .fancy-list li a {
         font-size: 14px;
         padding: 10px 12px;
+    }
+
+    .fancy-header {
+        font-size: 36px;
+        padding: 15px;
+        max-width: 90%;
+    }
+
+    .fancy-subheader {
+        font-size: 18px;
+        padding: 8px;
+        max-width: 90%;
     }
 }
