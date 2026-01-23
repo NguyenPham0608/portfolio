@@ -5,30 +5,214 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Portfolio</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 	<canvas id="particles-canvas"></canvas>
-
-	<div class="content">
-		<h1 class="fancy-header">Hello, I'm Nguyen 👋</h1>
-		<h2 class="fancy-subheader">This is the house for all my main websites.</h2>
-		<ul class="fancy-list" id="projects">
-			<li><a href="https://github.com/NguyenPham0608">GitHub</a></li>
-			<li><a href="https://nguyenpham0608.github.io/Space-Orbit/">Space Orbit</a></li>
-			<li><a href="https://chopchopmol.com">ChopChopMol 2.0</a></li>
-			<li><a href="https://nguyenpham0608.github.io/Integral/">Integral of Functions</a></li>
-			<li><a href="https://nguyenpham0608.github.io/Derivative/">Derivative of Functions</a></li>
-			<li><a href="https://nguyenpham0608.github.io/fpsCounter/">FPS test</a></li>
-			<li><a href="https://earth-roan-mu.vercel.app/">Earth</a></li>
-			<li><a href="https://metaballs.chopchopmol.com">Metaballs</a></li>
-			<li><a href="https://webgpu.chopchopmol.com">Particles</a></li>
-			<li><a href="https://liquidglass.chopchopmol.com">Liquid Glass</a></li>
-			<li><a href="https://info.chopchopmol.com">ChopChopMol Info</a></li>
-
-		</ul>
+	<div class="noise-layer"></div>
+	<div class="bg-orbs">
+		<span></span>
+		<span></span>
+		<span></span>
 	</div>
+
+	<main class="page">
+		<header class="hero glass">
+			<p class="eyebrow">Portfolio / Experiments / Playground</p>
+			<h1 class="fancy-header">Hello, I'm Nguyen 👋</h1>
+			<p class="bio">I build interactive visuals, math tools, and playful web experiments. This page is my launchpad for the coolest stuff I'm shipping.</p>
+			<div class="status">
+				<span class="status-label">Current focus</span>
+				<span class="status-pill">WebGPU particles, glassmorphism, and creative coding</span>
+			</div>
+		</header>
+
+		<section class="section">
+			<div class="section-head">
+				<h2>Featured Worlds</h2>
+				<p>Immersive, high-effort experiences.</p>
+			</div>
+			<ul class="project-grid">
+				<li class="project-card" data-hover="Space Orbit">
+					<a href="https://nguyenpham0608.github.io/Space-Orbit/">
+						<span class="card-top">
+							<span class="card-icon">🪐</span>
+							<span class="card-title">Space Orbit</span>
+						</span>
+						<span class="card-tags">
+							<span class="tag">WebGL</span>
+							<span class="tag">Physics</span>
+							<span class="tag">3D</span>
+						</span>
+						<span class="card-desc">A smooth orbital simulation with glowing trails and interactive camera control.</span>
+					</a>
+				</li>
+				<li class="project-card" data-hover="Earth">
+					<a href="https://earth-roan-mu.vercel.app/">
+						<span class="card-top">
+							<span class="card-icon">🌍</span>
+							<span class="card-title">Earth</span>
+						</span>
+						<span class="card-tags">
+							<span class="tag">Shader</span>
+							<span class="tag">Realtime</span>
+						</span>
+						<span class="card-desc">A cinematic, rotating globe with lighting and atmosphere details.</span>
+					</a>
+				</li>
+				<li class="project-card" data-hover="Liquid Glass">
+					<a href="https://liquidglass.chopchopmol.com">
+						<span class="card-top">
+							<span class="card-icon">💧</span>
+							<span class="card-title">Liquid Glass</span>
+						</span>
+						<span class="card-tags">
+							<span class="tag">UI Lab</span>
+							<span class="tag">Shader</span>
+						</span>
+						<span class="card-desc">Glassmorphism with fluid refraction and surreal highlights.</span>
+					</a>
+				</li>
+			</ul>
+		</section>
+
+		<section class="section">
+			<div class="section-head">
+				<h2>Experiments</h2>
+				<p>Playful visuals and physics studies.</p>
+			</div>
+			<ul class="project-grid">
+				<li class="project-card" data-hover="Particles">
+					<a href="https://webgpu.chopchopmol.com">
+						<span class="card-top">
+							<span class="card-icon">✨</span>
+							<span class="card-title">Particles</span>
+						</span>
+						<span class="card-tags">
+							<span class="tag">WebGPU</span>
+							<span class="tag">Compute</span>
+						</span>
+						<span class="card-desc">GPU-driven particle swarms with reactive motion.</span>
+					</a>
+				</li>
+				<li class="project-card" data-hover="Metaballs">
+					<a href="https://metaballs.chopchopmol.com">
+						<span class="card-top">
+							<span class="card-icon">🫧</span>
+							<span class="card-title">Metaballs</span>
+						</span>
+						<span class="card-tags">
+							<span class="tag">SDF</span>
+							<span class="tag">Motion</span>
+						</span>
+						<span class="card-desc">Organic blobs merging and splitting with gooey physics.</span>
+					</a>
+				</li>
+				<li class="project-card" data-hover="FPS Test">
+					<a href="https://nguyenpham0608.github.io/fpsCounter/">
+						<span class="card-top">
+							<span class="card-icon">⏱️</span>
+							<span class="card-title">FPS Test</span>
+						</span>
+						<span class="card-tags">
+							<span class="tag">Perf</span>
+							<span class="tag">Diagnostics</span>
+						</span>
+						<span class="card-desc">Quick performance benchmark for visual experiments.</span>
+					</a>
+				</li>
+			</ul>
+		</section>
+
+		<section class="section">
+			<div class="section-head">
+				<h2>Tools & Links</h2>
+				<p>Utilities, math helpers, and the main hub.</p>
+			</div>
+			<ul class="project-grid">
+				<li class="project-card" data-hover="ChopChopMol">
+					<a href="https://chopchopmol.com">
+						<span class="card-top">
+							<span class="card-icon">🧪</span>
+							<span class="card-title">ChopChopMol 2.0</span>
+						</span>
+						<span class="card-tags">
+							<span class="tag">Main Site</span>
+						</span>
+						<span class="card-desc">The official base for ChopChopMol projects and updates.</span>
+					</a>
+				</li>
+				<li class="project-card" data-hover="Integral">
+					<a href="https://nguyenpham0608.github.io/Integral/">
+						<span class="card-top">
+							<span class="card-icon">∫</span>
+							<span class="card-title">Integral of Functions</span>
+						</span>
+						<span class="card-tags">
+							<span class="tag">Math</span>
+							<span class="tag">Tool</span>
+						</span>
+						<span class="card-desc">Interactive integral calculator with clean visual feedback.</span>
+					</a>
+				</li>
+				<li class="project-card" data-hover="Derivative">
+					<a href="https://nguyenpham0608.github.io/Derivative/">
+						<span class="card-top">
+							<span class="card-icon">ƒ′</span>
+							<span class="card-title">Derivative of Functions</span>
+						</span>
+						<span class="card-tags">
+							<span class="tag">Math</span>
+							<span class="tag">Tool</span>
+						</span>
+						<span class="card-desc">Derivative helper built for fast, accurate evaluations.</span>
+					</a>
+				</li>
+				<li class="project-card" data-hover="Info">
+					<a href="https://info.chopchopmol.com">
+						<span class="card-top">
+							<span class="card-icon">📡</span>
+							<span class="card-title">ChopChopMol Info</span>
+						</span>
+						<span class="card-tags">
+							<span class="tag">Updates</span>
+						</span>
+						<span class="card-desc">Announcements, notes, and upcoming releases.</span>
+					</a>
+				</li>
+				<li class="project-card" data-hover="GitHub">
+					<a href="https://github.com/NguyenPham0608">
+						<span class="card-top">
+							<span class="card-icon">🧷</span>
+							<span class="card-title">GitHub</span>
+						</span>
+						<span class="card-tags">
+							<span class="tag">Code</span>
+							<span class="tag">Open Source</span>
+						</span>
+						<span class="card-desc">Source code, experiments, and prototypes.</span>
+					</a>
+				</li>
+			</ul>
+		</section>
+
+		<footer class="footer glass">
+			<div>
+				<h3>Let’s build something wild.</h3>
+				<p>Want a collab or want to see a new experiment? Reach me through GitHub for now.</p>
+			</div>
+			<div class="footer-links">
+				<a href="https://github.com/NguyenPham0608">GitHub</a>
+				<a href="https://chopchopmol.com">Main Site</a>
+				<a href="https://info.chopchopmol.com">Updates</a>
+			</div>
+		</footer>
+	</main>
+
 	<script src="script.js"></script>
 </body>
 
